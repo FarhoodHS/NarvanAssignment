@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="center">
+    <div class="col col-4 mx-auto">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h3 class="text-center">Fibonacci Function</h3><br>
+            <div class="form-row">
+                <div class="form-group col-6 mx-auto">
+                    <label>Enter so called 'n' number:</label>
+                    <input type="number" name="n" class="form-control" required>
+                </div>
+            </div>
+            <br>
+            <div class="form-row text-center">
+                <div class="form-group col mx-auto">
+                    <button class="btn btn-primary btn-block" type="submit">Calculate</button>
+                </div>
+            </div>
+            <br>
+        </form>
+        <br>
+        {% if instance %}
+
+        <h3 class="text-center text-break">The {{ instance.n }} Fibonacci Sequence is {{ instance.result }}</h3>
+        <h3 class="text-center">Runtime: {{ instance.duration }}</h3>
+
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}

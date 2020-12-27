@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+<h1 class="text-center pt-5">
+    Welcome Geeks
+</h1>
+<br>
+<div class="row align-items-center">
+    <div class="row-4 text-center pt-2">
+        Here is what you can do for fun
+    </div>
+    <div class="row-4 text-center pt-4">
+        <a class="btn btn-outline-primary" href=" {% url 'fibonacci:fibonacci' %} ">Calculate a Fibonacci Sequence</a>
+    </div>
+    <br>
+    <div class="row-4 text-center pt-2">
+        <a class="btn btn-outline-primary" href=" {% url 'ackermann:ackermann' %} ">The Ackermann Function</a>
+    </div>
+    <br>
+    <div class="row-4 text-center pt-2">
+        <a class="btn btn-outline-primary" href=" {% url 'factorial:factorial' %} ">The Factorial</a>
+    </div>
+</div>
+
+{% endblock content %}
